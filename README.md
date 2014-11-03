@@ -13,10 +13,10 @@ Data agnostic migrations
 ## Usage
 
 ```javascript
-var Migrant = require('migrations'),
+var Migrations = require('migrations'),
   MetaFile = require('migrations/lib/meta/file');
 
-module.exports = new Migrant({
+module.exports = new Migrations({
   dir: __dirname + '/migrations', // directory with migration files
   meta: new MetaFile({path: __dirname + '/migrations.json'}) // meta information storage
 });
@@ -27,7 +27,7 @@ module.exports.run();
 You can specify your custom store of meta data, e.g.:
 
 ```javascript
-var Migrant = require('migrations'),
+var Migrations = require('migrations'),
   meta = {};
 
 // Meta Storage has very basic interface:
@@ -37,7 +37,7 @@ var storage = {
 };
 
 
-module.exports = new Migrant({
+module.exports = new Migrations({
   dir: __dirname + '/migrations',
   meta: storage // custom storage
 });
