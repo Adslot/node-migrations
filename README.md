@@ -7,17 +7,17 @@ Data agnostic migrations
 
 ## Installation
 
-    npm install npm-proxy-cache -g
+    npm install migrant
 
 
 ## Usage
 
-```
+```javascript
 var Migrant = require('migrant'),
   MetaFile = require('migrant/lib/meta/file');
 
 module.exports = new Migrant({
-  dir: "#{__dirname}/migrations", // directory with migration files
+  dir: __dirname + '/migrations', // directory with migration files
   meta: new MetaFile({path: __dirname + '/migrant.json'}) // meta information storage
 });
 
@@ -26,7 +26,7 @@ module.exports.run();
 
 You can specify your custom store of meta data, e.g.:
 
-```
+```javascript
 var Migrant = require('migrant'),
   meta = {};
 
@@ -38,18 +38,33 @@ var storage = {
 
 
 module.exports = new Migrant({
-  dir: "#{__dirname}/migrations",
+  dir: __dirname + '/migrations',
   meta: storage // custom storage
 });
 
 module.exports.run();
 ```
 
+### Using with `npm`
+
+You can put a special task in package.json file:
+
+```
+{
+  "name": "my-project",
+  "scripts": {
+    "migrate": "node migrant.js"
+  }
+}
+```
+
+and then you be able to do `npm run migrate`. Another option is to add shebang to the *migrant* executable and run it in a manual way.
+
 
 ## Cli interface
 
 ```
-  Usage: migrant.coffee [options]
+  Usage: migrant.js [options]
 
   Options:
 
