@@ -1,4 +1,4 @@
-node-migrant
+node-migrations
 ============
 
 Data agnostic migrations
@@ -7,18 +7,18 @@ Data agnostic migrations
 
 ## Installation
 
-    npm install migrant
+    npm i migrations
 
 
 ## Usage
 
 ```javascript
-var Migrant = require('migrant'),
-  MetaFile = require('migrant/lib/meta/file');
+var Migrant = require('migrations'),
+  MetaFile = require('migrations/lib/meta/file');
 
 module.exports = new Migrant({
   dir: __dirname + '/migrations', // directory with migration files
-  meta: new MetaFile({path: __dirname + '/migrant.json'}) // meta information storage
+  meta: new MetaFile({path: __dirname + '/migrations.json'}) // meta information storage
 });
 
 module.exports.run();
@@ -27,7 +27,7 @@ module.exports.run();
 You can specify your custom store of meta data, e.g.:
 
 ```javascript
-var Migrant = require('migrant'),
+var Migrant = require('migrations'),
   meta = {};
 
 // Meta Storage has very basic interface:
@@ -53,18 +53,19 @@ You can put a special task in package.json file:
 {
   "name": "my-project",
   "scripts": {
-    "migrate": "node migrant.js"
+    "migrate": "node migrations.js"
   }
 }
 ```
 
-and then you be able to do `npm run migrate`. Another option is to add shebang to the *migrant* executable and run it in a manual way.
+and then you be able to do `npm run migrate`. Another option is to add shebang
+to the *migrations* executable and run it in a manual way.
 
 
 ## Cli interface
 
 ```
-  Usage: migrant.js [options]
+  Usage: migrations.js [options]
 
   Options:
 
