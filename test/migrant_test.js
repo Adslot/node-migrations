@@ -69,6 +69,18 @@ describe('index', function() {
       });
     });
 
+    it('should return a list to execute (down, 1}, mixed seq', function(done) {
+      meta.set({migrations: [
+        {filename: '20141028-aaa.js', ts: 22},
+        {filename: '20141030-bbb.js', ts: 11},
+      ]}, noon)
+      m.list('down', 1, function(err, list) {
+        if (err) return done(err);
+        assert.deepEqual(list, ['20141028-aaa.js']);
+        done()
+      });
+    });
+
     it('should return a list to execute (down, 10}', function(done) {
       meta.set({migrations: [
         {filename: '20141028-aaa.js', ts: 11},
