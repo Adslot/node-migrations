@@ -12,6 +12,9 @@ Data agnostic migrations
 
 ## Usage
 
+In order to use this module you need to have a bootstrap file (e.g. `migrations.js`) where you
+can initialize db, specify your own meta storage adapter and so on.
+
 ```javascript
 var Migrations = require('migrations'),
   MetaFile = require('migrations/lib/meta/file');
