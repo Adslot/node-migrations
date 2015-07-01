@@ -28,13 +28,14 @@ describe('index', function() {
     meta.flush(done)
   })
 
+
   describe('list()', function() {
 
     it('should return a list (up, 10, empty meta)', function(done) {
       meta.set(null, noon)
       m.list('up', 10, function(err, list) {
         if (err) return done(err);
-        assert.deepEqual(list, ['20141028-aaa.js', '20141030-bbb.js', '20141031-ccc.js']);
+        assert.deepEqual(list, ['20141028-aaa.js', '20141030-bbb.js', '20141031-ccc.js', '20150601-ddd.js']);
         done()
       });
     });
@@ -43,7 +44,7 @@ describe('index', function() {
       meta.set({migrations: [{filename: '20141028-aaa.js', ts: 11}]}, noon)
       m.list('up', 10, function(err, list) {
         if (err) return done(err);
-        assert.deepEqual(list, ['20141030-bbb.js', '20141031-ccc.js']);
+        assert.deepEqual(list, ['20141030-bbb.js', '20141031-ccc.js','20150601-ddd.js']);
         done()
       });
     });
@@ -127,8 +128,10 @@ describe('index', function() {
     });
   });
 
+
   describe('migrate()', function() {
     it('should migrate up', function(done) {
+      meta.set({migrations: [{filename: '20150601-ddd.js', ts: 11}]}, noon)
       m.migrate('up', 10, function(err, res) {
         if (err) return done(err);
 
@@ -146,6 +149,7 @@ describe('index', function() {
           });
 
           assert.deepEqual(migrations, [
+            '20150601-ddd.js',
             '20141028-aaa.js',
             '20141030-bbb.js',
             '20141031-ccc.js'
@@ -153,6 +157,13 @@ describe('index', function() {
           done()
         })
       })
+    });
+
+    it('should recognise double callbacks', function(done){
+      m.migrate('up', 10, function(err, res) {
+        assert.equal(err, 'Error: The callback called more than once in 20150601-ddd.js')
+        done()
+      });
     });
   });
 
