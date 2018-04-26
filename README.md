@@ -72,10 +72,11 @@ to the *migrations* executable and run it in a manual way.
 
   Options:
 
-    -h, --help  output usage information
-    --up      Migrate up
-    --down    Migrate down
-    --create  Create empty migration file
-    --count   Migrate particular number of migration
-    --revert  Revert last migration
+    -h, --help      output usage information
+    --up            Migrate up
+    --down          Migrate down
+    --create        Create empty migration file
+    --count         Migrate particular number of migration
+    --revert        Revert last migration
+    --extension     specify a file extension for the new migration file, default to 'coffee'
 ```
