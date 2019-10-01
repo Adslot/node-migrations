@@ -1,4 +1,5 @@
 node-migrations
+[![Build Status](https://api.travis-ci.org/Adslot/node-migrations.png)](https://travis-ci.org/Adslot/node-migrations)
 ============
 
 Data agnostic migrations
