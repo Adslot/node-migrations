@@ -1,6 +1,6 @@
 {
   "name": "migrations",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Data agnostic migrations",
   "main": "index.js",
   "dependencies": {
@@ -8,8 +8,8 @@
     "commander": ">=2.5.0"
   },
   "devDependencies": {
-    "mocha": "^4.1.0",
-    "rimraf": "latest"
+    "mocha": "^7.1.1",
+    "rimraf": "^3.0.2"
   },
   "scripts": {
     "test": "mocha --recursive"
