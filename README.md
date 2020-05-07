@@ -4,12 +4,9 @@ node-migrations
 
 Data agnostic migrations
 
-
-
 ## Installation
 
     npm i migrations
-
 
 ## Usage
 
@@ -23,6 +20,7 @@ var Migrations = require('migrations'),
 module.exports = new Migrations({
   dir: __dirname + '/migrations', // directory with migration files
   meta: new MetaFile({path: __dirname + '/migrations.json'}) // meta information storage
+  template: '', // template used by `--create` flag to generate a new migration file
 });
 
 module.exports.run();
@@ -36,14 +34,18 @@ var Migrations = require('migrations'),
 
 // Meta Storage has very basic interface:
 var storage = {
-  get: function(cb) { cb(null, meta) },
-  set: function(value, cb) { meta = value; cb() }
+  get: function (cb) {
+    cb(null, meta);
+  },
+  set: function (value, cb) {
+    meta = value;
+    cb();
+  },
 };
-
 
 module.exports = new Migrations({
   dir: __dirname + '/migrations',
-  meta: storage // custom storage
+  meta: storage, // custom storage
 });
 
 module.exports.run();
@@ -63,8 +65,7 @@ You can put a special task in package.json file:
 ```
 
 and then you be able to do `npm run migrate`. Another option is to add shebang
-to the *migrations* executable and run it in a manual way.
-
+to the _migrations_ executable and run it in a manual way.
 
 ## Cli interface
 
