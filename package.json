@@ -1,6 +1,6 @@
 {
   "name": "migrations",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "Data agnostic migrations",
   "main": "index.js",
   "dependencies": {
