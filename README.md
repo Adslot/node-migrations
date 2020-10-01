@@ -1,6 +1,8 @@
 node-migrations
-[![Build Status](https://api.travis-ci.org/Adslot/node-migrations.png)](https://travis-ci.org/Adslot/node-migrations)
 ============
+
+[![npm version](https://badge.fury.io/js/migrations.svg)](https://badge.fury.io/js/migrations)
+[![Build Status](https://api.travis-ci.org/Adslot/node-migrations.png)](https://travis-ci.org/Adslot/node-migrations)
 
 Data agnostic migrations
 
