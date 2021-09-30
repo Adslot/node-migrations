@@ -2,7 +2,7 @@ node-migrations
 ============
 
 [![npm version](https://badge.fury.io/js/migrations.svg)](https://badge.fury.io/js/migrations)
-![Build Status](https://github.com/Adslot/node-migrations/workflows/Node.js%20CI/badge.svg)
+![Build Status](https://github.com/Adslot/node-migrations/actions/workflows/node.js.yml/badge.svg)
 
 Data agnostic migrations
 
