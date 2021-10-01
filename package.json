@@ -8,7 +8,7 @@
     "commander": "^3.0.2"
   },
   "devDependencies": {
-    "mocha": "^8.4.0",
+    "mocha": "^9.1.2",
     "rimraf": "^3.0.2"
   },
   "scripts": {
