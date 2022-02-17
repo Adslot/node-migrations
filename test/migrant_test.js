@@ -35,7 +35,13 @@ describe('index', function() {
       meta.set(null, noon)
       m.list('up', 10, function(err, list) {
         if (err) return done(err);
-        assert.deepEqual(list, ['20141028-aaa.js', '20141030-bbb.js', '20141031-ccc.js', '20150601-ddd.js']);
+        assert.deepEqual(list, [
+          '20141028-aaa.js',
+          '20141030-bbb.js',
+          '20141031-ccc.js',
+          '20150601-ddd.js',
+          '20150701-eee.js',
+        ]);
         done()
       });
     });
@@ -44,7 +50,12 @@ describe('index', function() {
       meta.set({migrations: [{filename: '20141028-aaa.js', ts: 11}]}, noon)
       m.list('up', 10, function(err, list) {
         if (err) return done(err);
-        assert.deepEqual(list, ['20141030-bbb.js', '20141031-ccc.js','20150601-ddd.js']);
+        assert.deepEqual(list, [
+          '20141030-bbb.js',
+          '20141031-ccc.js',
+          '20150601-ddd.js',
+          '20150701-eee.js',
+        ]);
         done()
       });
     });
@@ -138,7 +149,8 @@ describe('index', function() {
         assert.deepEqual(res, [
           ['aaa: up', undefined],
           ['bbb: up', undefined],
-          ['ccc: up', undefined]
+          ['ccc: up', undefined],
+          ['eee: up', undefined]
         ]);
 
         m.meta.get(function(err, data) {
@@ -152,7 +164,8 @@ describe('index', function() {
             '20150601-ddd.js',
             '20141028-aaa.js',
             '20141030-bbb.js',
-            '20141031-ccc.js'
+            '20141031-ccc.js',
+            '20150701-eee.js'
           ])
           done()
         })
