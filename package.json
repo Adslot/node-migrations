@@ -4,7 +4,7 @@
   "description": "Data agnostic migrations",
   "main": "index.js",
   "dependencies": {
-    "async": "^3.2.4",
+    "async": "^3.2.5",
     "commander": "^11.0.0"
   },
   "devDependencies": {
