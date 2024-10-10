@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "mocha": "^10.7.3",
-    "rimraf": "^5.0.7"
+    "rimraf": "^6.0.1"
   },
   "scripts": {
     "postversion": "git push -u origin $(git rev-parse --abbrev-ref HEAD) --follow-tags && npm publish && echo '…released.'",
