@@ -20,4 +20,5 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       - run: npm ci --update-notifier=false
+      - run: npm run lint
       - run: npm test

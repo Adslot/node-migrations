@@ -8,10 +8,18 @@
     "commander": "^12.1.0"
   },
   "devDependencies": {
+    "eslint": "^9.19.0",
+    "eslint-config-adslot": "^2.0.2",
+    "globals": "^15.14.0",
     "mocha": "^11.0.1",
+    "prettier": "^3.4.2",
     "rimraf": "^6.0.1"
   },
   "scripts": {
+    "format": "prettier ''**/*.js' --write",
+    "lint:eslint": "eslint '**/*.js'",
+    "lint:prettier": "prettier '**/*.js' --check",
+    "lint": "npm run lint:eslint && npm run lint:prettier",
     "postversion": "git push -u origin $(git rev-parse --abbrev-ref HEAD) --follow-tags && npm publish && echo '…released.'",
     "preversion": "echo 'Releasing…' && npm ci",
     "release:major": "npm version major -m 'build: release major version %s'",
@@ -34,6 +42,12 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Adslot/node-migrations/issues"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "arrowParens": "always",
+    "printWidth": 120
   },
   "engines": {
     "node": "^22"
