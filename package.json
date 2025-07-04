@@ -11,8 +11,8 @@
     "eslint": "^9.23.0",
     "eslint-config-adslot": "^2.0.2",
     "globals": "^16.0.0",
-    "mocha": "^11.1.0",
-    "prettier": "^3.5.3",
+    "mocha": "^11.7.1",
+    "prettier": "^3.6.2",
     "rimraf": "^6.0.1"
   },
   "scripts": {
