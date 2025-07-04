@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "async": "^3.2.6",
-    "commander": "^13.1.0"
+    "commander": "^14.0.0"
   },
   "devDependencies": {
     "eslint": "^9.30.0",
