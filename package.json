@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "eslint": "^9.37.0",
-    "eslint-config-adslot": "^2.1.1",
+    "eslint-config-adslot": "^2.2.0",
     "mocha": "^11.7.4",
     "prettier": "^3.6.2",
     "rimraf": "^6.0.1"
@@ -49,6 +49,6 @@
     "printWidth": 120
   },
   "engines": {
-    "node": "^22"
+    "node": "^24"
   }
 }
