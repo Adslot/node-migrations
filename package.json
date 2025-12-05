@@ -10,8 +10,8 @@
   "devDependencies": {
     "eslint": "^9.39.1",
     "eslint-config-adslot": "^2.2.0",
-    "mocha": "^11.7.4",
-    "prettier": "^3.6.2",
+    "mocha": "^11.7.5",
+    "prettier": "^3.7.3",
     "rimraf": "^6.1.2"
   },
   "scripts": {
