@@ -8,7 +8,7 @@
     "commander": "^14.0.2"
   },
   "devDependencies": {
-    "eslint": "^9.39.1",
+    "eslint": "^10.2.0",
     "eslint-config-adslot": "^2.2.0",
     "mocha": "^11.7.5",
     "prettier": "^3.7.3",
